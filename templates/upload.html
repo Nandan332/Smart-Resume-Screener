@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <div class="glass-card" data-aos="fade-up">
+      <h3 class="mb-4 text-center">Upload Job Description & Resumes</h3>
+
+      <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label class="form-label">Job Description</label>
+          <textarea name="job_description" class="form-control bg-transparent text-white" rows="6"
+            style="border: 1px solid rgba(255,255,255,0.2);"></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Required Skills (comma separated)</label>
+          <input name="required_skills" class="form-control bg-transparent text-white"
+            placeholder="Python, SQL, Tableau" style="border: 1px solid rgba(255,255,255,0.2);" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Category</label>
+          <select name="category" class="form-select bg-transparent text-white"
+            style="border: 1px solid rgba(255,255,255,0.2);">
+            <option class="text-dark">Data Analytics</option>
+            <option class="text-dark">Data Engineering</option>
+            <option class="text-dark">Software Engineering</option>
+            <option class="text-dark">Others</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Resumes (PDF, DOCX, TXT)</label>
+          <input type="file" name="resumes" multiple class="form-control bg-transparent text-white"
+            style="border: 1px solid rgba(255,255,255,0.2);" />
+        </div>
+
+        <div class="d-grid gap-2 mt-4">
+          <button class="btn btn-primary btn-lg">Process Resumes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

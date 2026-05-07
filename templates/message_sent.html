@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Message Sent</h2>
+
+<div class="alert alert-success">
+    Message delivered (or queued).<br>
+    <strong>Message:</strong>
+    <div class="mt-2 p-2 bg-light">{{ msg }}</div>
+</div>
+
+<a class="btn btn-secondary" href="/">Back to Home</a>
+
+{% endblock %}

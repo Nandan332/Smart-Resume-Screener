@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="hero-section">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h1 class="hero-title" data-aos="fade-up">Smart Resume Screener</h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                Upload resumes, paste a job description, and get ranked candidates with AI-powered shortlisting &
+                messaging.
+            </p>
+            <div data-aos="fade-up" data-aos-delay="200">
+                <a class="btn btn-primary btn-lg animate-float" href="/upload">
+                    Get Started
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-arrow-right ms-2" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5" data-aos="fade-up" data-aos-delay="400">
+        <div class="col-md-4 mb-4">
+            <div class="glass-card h-100">
+                <h3>📂 Bulk Upload</h3>
+                <p class="text-muted">Process hundreds of resumes in seconds.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="glass-card h-100">
+                <h3>🤖 AI Ranking</h3>
+                <p class="text-muted">Smart matching based on job descriptions.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="glass-card h-100">
+                <h3>📧 Auto-Email</h3>
+                <p class="text-muted">Contact shortlisted candidates instantly.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

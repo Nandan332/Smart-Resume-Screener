@@ -1,0 +1,15 @@
+Flask==2.3.3
+Werkzeug==3.0.1
+
+# File extraction
+PyPDF2==3.0.1
+python-docx==0.8.11
+
+# AI Embeddings & APIs
+google-generativeai==0.4.0      # Official Gemini API
+openai==1.12.0                  # Optional OpenAI fallback
+numpy                 # For embedding vector operations
+requests==2.31.0
+gunicorn==21.2.0
+twilio
+

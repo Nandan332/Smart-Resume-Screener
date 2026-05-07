@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Shortlist</h2>
+
+<table class="table table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Total Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for c in shortlisted %}
+        <tr>
+            <td>{{ c.name }}</td>
+            <td>{{ c.category }}</td>
+            <td>{{ c.email }}</td>
+            <td>{{ c.phone }}</td>
+            <td>{{ '%.3f'|format(c.total_score|float) }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<form method="POST" action="/send_message">
+    <textarea name="message" class="form-control" rows="4" placeholder="Message to shortlisted..."></textarea>
+    <button class="btn btn-primary mt-3">Send Message</button>
+</form>
+
+{% endblock %}

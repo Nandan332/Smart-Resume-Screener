@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="mb-3">Shortlisted Candidates (Sorted)</h2>
+
+<!-- FILTER BUTTONS -->
+<div class="mb-3">
+    <a href="/sorted_resumes?filter=none" class="btn btn-outline-secondary btn-sm">All</a>
+    <a href="/sorted_resumes?filter=under70" class="btn btn-outline-danger btn-sm">Under 70%</a>
+    <a href="/sorted_resumes?filter=under80" class="btn btn-outline-warning btn-sm">Under 80%</a>
+    <a href="/sorted_resumes?filter=above80" class="btn btn-outline-primary btn-sm">Above 80%</a>
+    <a href="/sorted_resumes?filter=above90" class="btn btn-outline-success btn-sm">Above 90%</a>
+</div>
+
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>Name</th>
+            <th>Profession</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Total Percentage</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for r in data %}
+        <tr>
+            <td>{{ r.name }}</td>
+            <td>{{ r.category }}</td>
+            <td>{{ r.email }}</td>
+            <td>{{ r.phone }}</td>
+            <td><strong>{{ r.percentage }}%</strong></td>
+        </tr>
+        {% endfor %}
+
+        {% if data|length == 0 %}
+        <tr><td colspan="5" class="text-center">No candidates for this filter</td></tr>
+        {% endif %}
+    </tbody>
+</table>
+
+<!-- MESSAGE BOX -->
+<h4>Send Message to All Shortlisted</h4>
+<form method="POST" action="/send_message">
+    <textarea name="message" class="form-control" rows="4"
+              placeholder="Enter your message here..."></textarea>
+    <button class="btn btn-primary mt-3">Send Message</button>
+</form>
+
+{% endblock %}
